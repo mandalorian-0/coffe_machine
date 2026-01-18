@@ -37,12 +37,44 @@ def get_report(actual_resources):
 def show_depleted_resources(depleted_resources):
     print(f"Sorry there is not enough {", ".join(depleted_resources)}.")
 
+def get_coins():
+    coins_accepted = ["quarters", "dimes", "nickles", "pennies"]
+
+    coins_entered = {}
+
+    for coin in coins_accepted:
+        money = int(input(f"How many {coin}?: "))
+        coins_entered[coin] = money
+
+    return coins_entered
+
+def process_coins(coins):
+    # coins_accepted = ["quarters", "dimes", "nickles", "pennies"]
+
+    total = 0
+    dollar_value = 0
+
+    for coin_name, coin_value in coins.items():
+        if coin_name == "quarters":
+            dollar_value = coin_value * 0.25
+        elif coin_name == "dimes":
+            dollar_value = coin_value * 0.10
+        elif coin_name == "nickles":
+            dollar_value = coin_value * 0.05
+        elif coin_name == "pennies":
+            dollar_value = coin_value * 0.01
+        
+        total += dollar_value
+
+    return total
+
+
 def main():
 
     while True:
         menu()
 
-        choice = input("What you would like today?")
+        choice = input("What you would like today? ")
 
         if choice == "report":
             get_report(resources)
@@ -58,6 +90,28 @@ def main():
         if not internal_report["can_make_order"]:
             show_depleted_resources(internal_report["depleted_resources"])
             continue
+
+        # TODO: Process coins, coins will be equal to x amount of dollars
+        # coffee_cost = coffee_flavors[chosen_flavor].get("cost")
+
+        customer_coins = get_coins()
+
+        total = process_coins(customer_coins)
+        print(total)
+        
+
+
+
+        # TODO: Check if coins amount can buy the flavor selected
+
+        # TODO: Process change, if there is change
+
+        # TODO: Add the money to the system
+
+        # TODO: Update resources
+
+        # TODO: Present order
+  
             
     
 
