@@ -1,2 +1,2 @@
-# coffe_machine
+# Coffee machine
 A coffee machine simulation
