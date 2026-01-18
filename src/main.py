@@ -21,6 +21,11 @@ def main():
             print("System has been put under maintenance 🚧")
             continue
 
+        if choice == "refill":
+            print("System resources has been refilled.")
+            refill_machine(resources)
+            continue
+
         choice = int(choice)
 
         chosen_flavor = get_specific_flavor(choice, coffee_flavors=coffee_flavors)
@@ -32,6 +37,7 @@ def main():
             continue
 
         # Process coins, coins will be equal to x amount of dollars
+        print(f"{"*" * 20}Processing{"*" * 20}")
         coffee_cost = coffee_flavors[chosen_flavor].get("cost")
 
         customer_coins = get_coins()
@@ -59,7 +65,8 @@ def main():
         update_resources(resources, resources_to_remove)
 
         # Present order
-        print(f"Here is your {chosen_flavor} 🍵")
+        print(f"\nHere is your {chosen_flavor} 🍵 Enjoy!")
+        input("Press enter to continue... ")
   
 
 if __name__ == "__main__":

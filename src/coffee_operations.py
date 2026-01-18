@@ -56,6 +56,13 @@ def get_coins():
 
     return coins_entered
 
+def refill_machine(old_resources):
+    for resource, value in old_resources.items():
+        if resource == "money":
+            continue
+        old_resources[resource] += 300
+
+
 def check_resources(actual_resources, flavor, coffee_flavors):
     resources_needed = coffee_flavors[flavor].get("ingredients")
     depleted_resources = []
