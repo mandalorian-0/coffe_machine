@@ -27,7 +27,8 @@ coffee_flavors = {
 resources = {
     "water": 300,
     "milk": 200,
-    "coffee": 100
+    "coffee": 100, 
+    "money": 0
 }
 
 if __name__ == "__main__":

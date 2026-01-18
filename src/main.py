@@ -2,8 +2,8 @@ from data import coffee_flavors, resources
 
 from coffee_operations import *
 
-
 def main():
+    modified_resources = get_resources_without_money(resources)
 
     while True:
         menu(coffee_flavors)
@@ -45,10 +45,15 @@ def main():
             print(f"No change.")
 
         # TODO: Add the money to the system
+        elements = coffee_flavors[chosen_flavor].get("ingredients")
+        elements["money"] = coffee_flavors[chosen_flavor].get("cost")
+        resources_to_remove = elements
 
         # TODO: Update resources
+        update_resources(resources, resources_to_remove)
 
         # TODO: Present order
+        print(f"Here is your {chosen_flavor} 🍵")
   
             
     
