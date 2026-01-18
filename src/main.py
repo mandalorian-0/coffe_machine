@@ -107,11 +107,11 @@ def main():
 
 
         # TODO: Process change, if there is change
-        # change = money_entered - coffee_cost
-        # if change > 0:
-        #     print(f"Here is ${math.round(change)} in change.")
-        # else:
-        #     print(f"No change.")
+        change = money_entered - coffee_cost
+        if change > 0:
+            print(f"Here is ${math.round(change)} in change.")
+        else:
+            print(f"No change.")
 
         # TODO: Add the money to the system
 
