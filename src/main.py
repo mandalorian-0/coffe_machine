@@ -1,3 +1,5 @@
+import math
+
 from data import coffee_flavors, resources
 
 
@@ -92,19 +94,24 @@ def main():
             continue
 
         # TODO: Process coins, coins will be equal to x amount of dollars
-        # coffee_cost = coffee_flavors[chosen_flavor].get("cost")
+        coffee_cost = coffee_flavors[chosen_flavor].get("cost")
 
         customer_coins = get_coins()
 
-        total = process_coins(customer_coins)
-        print(total)
+        money_entered = process_coins(customer_coins)
         
-
-
-
         # TODO: Check if coins amount can buy the flavor selected
+        if money_entered < coffee_cost:
+            print("Sorry that's not enough money. Money refunded.")
+            continue
+
 
         # TODO: Process change, if there is change
+        # change = money_entered - coffee_cost
+        # if change > 0:
+        #     print(f"Here is ${math.round(change)} in change.")
+        # else:
+        #     print(f"No change.")
 
         # TODO: Add the money to the system
 
