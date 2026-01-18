@@ -8,7 +8,6 @@ def get_specific_flavor(user_choice, coffee_flavors):
     return specific_flavor
 
 def menu(coffee_flavors):
-    print(f"{"*" * 20}Mandalorian Coffee{"*" * 20}")
     print(f"{"*" * 20}MENU{"*" * 20}")
 
     for idx, flavor in enumerate(coffee_flavors.keys()):

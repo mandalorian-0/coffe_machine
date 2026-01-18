@@ -1,11 +1,13 @@
+from coffee_operations import *
+from art import logo
 from data import coffee_flavors, resources
 
-from coffee_operations import *
-
 def main():
+
     modified_resources = get_resources_without_money(resources)
 
     while True:
+        print(logo)
         menu(coffee_flavors)
 
         choice = input("What you would like today? ")
