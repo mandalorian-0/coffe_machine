@@ -48,6 +48,8 @@ def get_coins():
 
     coins_entered = {}
 
+    print("Please insert coins.")
+
     for coin in coins_accepted:
         money = int(input(f"How many {coin}?: "))
         coins_entered[coin] = money
